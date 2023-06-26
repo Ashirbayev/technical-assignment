@@ -1,0 +1,33 @@
+<h2>Job List</h2>
+
+<table class="job-table">
+  <thead>
+  <tr>
+    <th>Job Number</th>
+    <th>Job Title</th>
+    <th>Start Date</th>
+    <th>Close Date</th>
+    <th>Experience Required</th>
+    <th>Number of Openings</th>
+    <th>Job Notes</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let job of jobs" (click)="navigateToJobDetails(job.id)">
+    <td>{{ job.job_number }}</td>
+    <td>{{ job.job_title }}</td>
+    <td>{{ job.job_start_date }}</td>
+    <td>{{ job.job_close_date }}</td>
+    <td>{{ job.experience_required ? 'Yes' : 'No' }}</td>
+    <td>{{ job.number_of_openings }}</td>
+    <td>{{ job.job_notes }}</td>
+    <td>
+      <button (click)="navigateToJob(job.id)">Edit</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<div class="add-job-button-container">
+  <button class="add-job-button" (click)="navigateToAddJob()">Add Job</button>
+</div>

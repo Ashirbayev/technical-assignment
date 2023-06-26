@@ -1,0 +1,40 @@
+<h2>Add Job</h2>
+
+<form (submit)="onSubmit()" class="add-job-form">
+  <div class="form-group">
+    <label for="jobNumber">Job Number</label>
+    <input type="text" id="jobNumber" [(ngModel)]="newJob.id" name="jobNumber" required>
+  </div>
+
+  <div class="form-group">
+    <label for="jobTitle">Job Title</label>
+    <input type="text" id="jobTitle" [(ngModel)]="newJob.job_title" name="jobTitle" required>
+  </div>
+
+  <div class="form-group">
+    <label for="startDate">Start Date</label>
+    <input type="date" id="startDate" [(ngModel)]="newJob.job_start_date" name="startDate" required>
+  </div>
+
+  <div class="form-group">
+    <label for="closeDate">Close Date</label>
+    <input type="date" id="closeDate" [(ngModel)]="newJob.job_close_date" name="closeDate" required>
+  </div>
+
+  <div class="form-group">
+    <label for="experienceRequired">Experience Required</label>
+    <input type="checkbox" id="experienceRequired" [(ngModel)]="newJob.experience_required" name="experienceRequired">
+  </div>
+
+  <div class="form-group">
+    <label for="numberOfOpenings">Number of Openings</label>
+    <input type="number" id="numberOfOpenings" [(ngModel)]="newJob.number_of_openings" name="numberOfOpenings" required>
+  </div>
+
+  <div class="form-group">
+    <label for="jobNotes">Job Notes</label>
+    <textarea id="jobNotes" [(ngModel)]="newJob.job_notes" name="jobNotes"></textarea>
+  </div>
+
+  <button type="submit" class="add-job-button" >{{newJob.id === 0 ? 'Add Job' : 'Edit JOb'}}</button>
+</form>
